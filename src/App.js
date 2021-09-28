@@ -1,56 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
-// Componente con primer letra en mayusculas (buena practica)
-/* function Helloworld(props){
-  return (
-    <div id="hello">
-      <h3>{props.subtitle}</h3>
-      {props.mytext}
-    </div> 
-  )
-} */
-
-class Helloworld extends React.Component{
-  // Este objeto estado almacena datos de este componente Helloworld
-  state = {
-    show: true
-  }
-  
-  toggleShow = () => {
-    //Si esta en true cambia a false y si esta en false cambia a true
-    this.setState({show: !this.state.show})
-  }
-
-  // Metodo render que retorna elemento div y h3 junto con sus propiedades
+class App extends Component {
   render() {
-    if (this.state.show) {
-      return (
-        <div id="hello">
-        <h3>{this.props.subtitle}</h3>
-        {this.props.mytext}
-        <button onClick={this.toggleShow}>Toggle Show</button>
-        </div> 
-      )
-    } else {
-      return <h1>
-        There are not elements
-        <button onClick={this.toggleShow}>Toggle Show</button>
-      </h1>
-    }
+    return <h1>Hello world</h1>
   }
-}
-
-// Permite devolver 'que es' lo que queremos pintar por pantalla
-function App() {
-  return (
-    <div>
-      This is my component: 
-      <Helloworld mytext="Hello Fazt" subtitle="loremp ipsum 1" /> 
-      <Helloworld mytext="Hello Luke" subtitle="loremp ipsum 2" /> 
-      <Helloworld mytext="Hello React" subtitle="loremp ipsum 3" /> 
-    </div>
-  );
 }
 
 export default App;
