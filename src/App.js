@@ -18,7 +18,8 @@ class Helloworld extends React.Component{
   }
   
   toggleShow = () => {
-    this.setState({show: false})
+    //Si esta en true cambia a false y si esta en false cambia a true
+    this.setState({show: !this.state.show})
   }
 
   // Metodo render que retorna elemento div y h3 junto con sus propiedades
@@ -32,7 +33,10 @@ class Helloworld extends React.Component{
         </div> 
       )
     } else {
-      return <h1>There are not elements</h1>
+      return <h1>
+        There are not elements
+        <button onClick={this.toggleShow}>Toggle Show</button>
+      </h1>
     }
   }
 }
