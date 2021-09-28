@@ -8,7 +8,15 @@ function Helloworld(){
   )
 }
 
-const App = () => <div>This is my component: <Helloworld/> </div>
+// Componente App mediante una arrow function
+// const App = () => <div>This is my component: <Helloworld/> </div>
+
+// Herencia desde React.Component a la clase App
+class App extends React.Component{
+  render(){
+    return <div>This is my component: <Helloworld/> </div>
+  }
+}
 
 // Permite devolver 'que es' lo que queremos pintar por pantalla
 //function App() {
