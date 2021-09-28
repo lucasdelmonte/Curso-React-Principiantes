@@ -17,14 +17,18 @@ class Helloworld extends React.Component{
     show: true
   }
   
+  toggleShow = () => {
+    this.setState({show: false})
+  }
+
   // Metodo render que retorna elemento div y h3 junto con sus propiedades
-  render(){
+  render() {
     if (this.state.show) {
       return (
         <div id="hello">
         <h3>{this.props.subtitle}</h3>
         {this.props.mytext}
-        <button onClick={() => this.setState({show: false})}>Toggle Show</button>
+        <button onClick={this.toggleShow}>Toggle Show</button>
         </div> 
       )
     } else {
