@@ -24,7 +24,7 @@ class Helloworld extends React.Component{
         <div id="hello">
         <h3>{this.props.subtitle}</h3>
         {this.props.mytext}
-        <button onClick={() => alert('Welcome')}>Toggle Show</button>
+        <button onClick={() => this.setState({show: false})}>Toggle Show</button>
         </div> 
       )
     } else {
