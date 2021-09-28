@@ -3,6 +3,8 @@ import './App.css';
 
 import tasks from './sample/task.json';
 
+import Tasks from './components/Tasks';
+
 class App extends Component {
 
   state = {
@@ -11,7 +13,7 @@ class App extends Component {
 
   render() {
     return <div>
-      { this.state.tasks.map(e=> <h1>{e.title}</h1>) }
+      <Tasks tasks={this.state.tasks}/>
     </div>
   }
 }
