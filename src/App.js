@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 import './App.css';
 
@@ -8,7 +8,7 @@ import tasks from './sample/task.json';
 // Componentes
 import Tasks from './components/Tasks';
 import TaskForm from './components/TaskForm.js';
-import Post from './components/Post.js'
+import Posts from './components/Post.js'
 
 class App extends Component {
 
@@ -45,7 +45,10 @@ class App extends Component {
   render() {
     return <div>
       <Router>
-        <Route path="/" render={() => {
+        <Link to="/">Home</Link>
+        <br />
+        <Link to="/posts">Posts</Link>
+        <Route exact path="/" render={() => {
           return <div>
             <TaskForm addTask={this.addTask} />
             <Tasks 
@@ -55,8 +58,8 @@ class App extends Component {
           </div>
         }}>
       </Route>
+      <Route path='/posts' component={Posts} />
       </Router>
-      <Post />
     </div>
   }
 }
